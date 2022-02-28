@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+h1 {color:black; text-align:center; background:#f5f5f5}
+td {border: 1px solid black;}
+table {border-collapse: collapse; border: 1px solid black; background: white; width: 100%}
+p {text-align:center; background:#808080}
+</style>
+<meta charset="ISO-8859-1">
+<title>ListaCorsi</title>
+</head>
+<body>
+<h1>Elenco corsi</h1>
+	<table>
+		<tr>
+			<th>Codice</th>
+			<th>Nome corso</th>
+			<th>Indirizzo</th>
+			<th>Numero esami</th>
+			
+		</tr>
+		<div th:each="c: ${corsiLista}">
+			
+				<td th:text="${c.codice}"></td>
+				<td th:text="${c.nome}"></td>
+				<td th:text="${c.indirizzo}"></td>
+				<td th:text="${c.numeroEsami}"></td>
+			</tr>
+
+			<tr>
+	</div>
+	
+		
+		
+	
+	</table>
+	
+	<p>
+	<a href="mostraformcorso" style="color: white">Aggiungi corso</a><br>
+	<a href="formeliminacorso" style="color: white">Elimina corso</a><br>
+	<a href="formaggiornacorso?codice=1" style="color: white">Aggiorna corso</a><br>
+	<a href="/" style="color: white">Home</a>
+	</p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+h1 {color:black; text-align:center; background:#f5f5f5}
+td {border: 1px solid black;}
+table {border-collapse: collapse; border: 1px solid black; background: white; width: 100%}
+p {text-align:center; background:#808080}
+</style>
+<meta charset="ISO-8859-1">
+<title>ListaStudenti</title>
+</head>
+<body>
+	<h1>Elenco studenti</h1>
+	<table>
+		<tr>
+			<th>Matricola</th>
+			<th>Nome</th>
+			<th>Cognome</th>
+			<th>Nato/a il</th>
+			<th>Email</th>
+			<th>Citta</th>
+			<th>Indirizzo</th>
+<!-- 			<th>Corso</th> -->
+			
+			
+		</tr>
+		<div th:each="s: ${studentiLista}">
+			<tr>
+				<td th:text="${s.matricola}"></td>
+				<td th:text="${s.nome}"></td>
+				<td th:text="${s.cognome}"></td>
+				<td th:text="${s.dataDiNascita}"></td>
+				<td th:text="${s.email}"></td>
+				<td th:text="${s.citta}"></td>
+				<td th:text="${s.indirizzo}"></td>
+<!--  				<td th:text="${s.corso.nome}"></td> -->
+				
+				
+			</tr>
+
+		</div>
+
+
+
+	</table>
+	
+	<p><a href="mostraformstudente" style="color: white">Aggiungi studente</a><br>
+	<a href="formeliminastudente" style="color: white">Elimina studente</a><br>
+	<a href="formaggiornastudente/1" style="color: white">Aggiorna studente</a><br>
+	<a href = "/" style="color: white">Home</a>
+	</p>
+	
+
+</body>
+</html>

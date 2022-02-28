@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+  h1 {color:black; text-align:center; background:#f5f5f5}
+</style>
+<meta charset="ISO-8859-1">
+<title>FormAggiornaCorso</title>
+</head>
+<body>
+	<h1>Aggiorna corso</h1>
+	<form action="#" th:action="@{/aggiornacorso}"
+		th:object="${corso}" method="post">
+
+		<p>
+			Codice: <input type="text" readonly="readonly" th:field="*{codice}" />
+		</p>
+		<p>
+			Nome: <input type="text" th:field="*{nome}" />
+		</p>
+		<p>
+			Indirizzo: <input type="text" th:field="*{indirizzo}" />
+		</p>
+		<p>
+			Numero esami: <input type="text" th:field="*{numeroEsami}" />
+		</p>
+		
+		<p>
+			<input type="submit" value="Aggiorna" /> <input type="reset"
+				value="Reset" />
+		</p>
+		</form>
+		<hr>
+</body>
+</html>

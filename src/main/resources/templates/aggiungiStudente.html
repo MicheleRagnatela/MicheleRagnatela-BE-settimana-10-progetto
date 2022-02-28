@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+  h1 {color:black; text-align:center; background:#f5f5f5}
+</style>
+<meta charset="ISO-8859-1">
+<title>Form Studente</title>
+</head>
+<body>
+	<h1>Inserisci i dati dello studente</h1>
+	<form action="#" method="post" th:action="@{/aggiungistudente}"
+		th:object="${studente}" >
+
+		<p>
+			Matricola: <input type="text" th:field="*{matricola}" />
+		</p>
+		<p>
+			Nome: <input type="text" th:field="*{nome}" />
+		</p>
+		<p>
+			Cognome: <input type="text" th:field="*{cognome}" />
+		</p>
+		<p>
+			Data di nascita: <input type="date" th:field="*{dataDiNascita}" />
+		</p>
+		<p>
+			Email: <input type="email" th:field="*{email}" />
+		</p>
+		<p>
+			Indirizzo: <input type="text" th:field="*{indirizzo}" />
+		</p>
+		<p>
+			Citta: <input type="text" th:field="*{citta}" />
+		</p>
+		<div>
+			Corsi: <select  th:field="*{corso}">
+				<option value="">Seleziona corso</option>
+				<option th:each="c : ${corsiLista}" th:value="${c.codice}"
+					th:text="${c.nome}"></option>
+
+
+			</select>
+
+		</div>
+		<p>
+			<input type="submit" value="Aggiungi" /> <input type="reset"
+				value="Reset" />
+		</p>
+
+
+
+	</form>
+	<hr>
+</body>
+</html>
